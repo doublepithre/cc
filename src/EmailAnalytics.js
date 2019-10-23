@@ -149,6 +149,19 @@ class EmailAnalytics extends Component {
               showTemplateData && (
               <div>
                 <h2>CHARTS SHOW</h2>
+                <div className="bx--col-lg-6">
+                  {/* <PieChartAnalytics data={oata} /> */}
+                  {/* <PieChart
+                    data={this.state.data}
+                    width="100%"
+                    height={200}
+                    options={{
+                      accessibility: false,
+                      legendClickable: true,
+                      containerResizable: false,
+                    }}
+                  /> */}
+                </div>
                 {keys &&
                   Array.isArray(keys) &&
                   keys.length > 0 &&
