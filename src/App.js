@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import EmailAnalytics from "./EmailAnalytics";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log("CON APP", props);
+    this.state = {};
+  }
+
+  componentDidMount() {
+    console.log("CDM APP");
+  }
+
+  render() {
+    console.log("RENDER APP", this.state.data);
+    const data = {
+      response: {
+        templateDistribution: {
+          shortlist: {
+            Delivered: 20,
+            Bounced: 3,
+            count: 23
+          },
+          reject: {
+            Delivered: 12,
+            Bounced: 8,
+            count: 20
+          }
+        }
+      }
+    };
+    return (
+      <div className="App">
+        <EmailAnalytics templateAnalytics={data} />
+      </div>
+    );
+  }
 }
 
 export default App;
